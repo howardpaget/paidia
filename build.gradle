@@ -38,3 +38,9 @@ allprojects{
         kotlinOptions.jvmTarget = "1.8"
     }
 }
+
+project(':game-videopoker'){
+    dependencies {
+        compile project(':game-api')
+    }
+}

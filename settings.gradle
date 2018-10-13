@@ -1,0 +1,6 @@
+rootProject.name = 'paidia-app'
+
+include 'paidia'
+include 'paidia-server'
+include 'game-api'
+include 'game-videopoker'

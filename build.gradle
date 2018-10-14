@@ -44,3 +44,10 @@ project(':game-videopoker'){
         compile project(':game-api')
     }
 }
+
+project(':paidia'){
+    dependencies {
+        compile project(':game-api')
+        compile project(':game-videopoker')
+    }
+}

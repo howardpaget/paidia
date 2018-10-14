@@ -1,5 +1,7 @@
 package uk.co.howardpaget.paidia.videopoker.model
 
+import java.lang.IllegalArgumentException
+
 enum class CardValue(private val value: String) {
     Ace("A"),
     Two("2"),
@@ -17,5 +19,12 @@ enum class CardValue(private val value: String) {
 
     override fun toString(): String {
         return value
+    }
+
+    companion object Factory {
+        fun fromString(str: String): CardValue {
+            return values().firstOrNull { value -> value.toString() == str }
+                    ?: throw IllegalArgumentException("$str is not a valid card value")
+        }
     }
 }

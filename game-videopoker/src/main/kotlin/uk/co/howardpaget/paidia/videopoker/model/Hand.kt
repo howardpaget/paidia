@@ -16,4 +16,27 @@ class Hand(cards: List<Card>) {
 
         this.cards = cards.sortedWith(compareBy({ it.value }, { it.suit }))
     }
+
+    override fun toString(): String {
+        return cards.map { card -> card.toString() }.reduce { str, card -> "$str,$card" }
+    }
+
+    companion object Factory {
+        fun fromString(str: String): Hand {
+            val cardStrs = str.split(",")
+            return Hand(cardStrs.map { s -> Card.fromString(s) })
+        }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if(other == null) {
+            return false
+        }
+
+        if(other is Hand){
+            return cards.containsAll(other.cards)
+        }
+
+        return false
+    }
 }

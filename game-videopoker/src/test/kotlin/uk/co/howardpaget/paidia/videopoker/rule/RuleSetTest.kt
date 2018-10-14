@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test
 
 class RuleSetTest {
 
-    private val ruleSet = RuleSet(listOf(RoyalFlush(), StraightFlush(), FourOfAKind(), FullHouse(), Flush(), Straight(), ThreeOfAKind(), TwoPair(), OnePair()))
+    private val ruleSet = RuleSet.defaultRuleSet()
 
     @Test
     fun flushTest() {
